@@ -5,7 +5,15 @@ Vue.use(Vuetify);
 
 const opts = {
   theme: {
-    primary: "#CCC"
+    themes: {
+      light: {
+        primary: "#1F5855",
+        secondary: "#49D782",
+        accent: "#C4E197",
+        error: "#C73651",
+        text: "#F5F5DF"
+      }
+    }
   }
 };
 
