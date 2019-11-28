@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    <v-container class="grey lighten-5">
+    <v-container class="secondary">
       <v-row>
         <v-col>
           <v-card flat class="pa-4">
