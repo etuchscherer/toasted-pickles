@@ -1,6 +1,6 @@
 import { storyFactory } from "../util/helpers";
 import StatusBar from "../../src/components/StatusBar";
-import { text, boolean } from "@storybook/addon-knobs";
+import { text, select } from "@storybook/addon-knobs";
 
 export default { title: "StatusBar" };
 
@@ -12,11 +12,11 @@ export const asDefault = () =>
       StatusBar
     },
     props: {
-      color: {
-        default: text('color value', 'green')
+      state: {
+        default: text('applied state', 'error')
       }
     },
     template: `
-    <StatusBar :color="color" />
+    <StatusBar :state="state" />
   `
   });
