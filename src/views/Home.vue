@@ -3,9 +3,7 @@
     <v-container class="secondary">
       <v-row>
         <v-col>
-          <v-card flat class="pa-4">
-            System Status
-          </v-card>
+          <StatusBar />
         </v-col>
       </v-row>
       <v-row>
@@ -31,10 +29,13 @@
 </template>
 
 <script>
+import StatusBar from '@/components/StatusBar';
 // @ is an alias to /src
 
 export default {
   name: "home",
-  components: {}
+  components: {
+    StatusBar
+  }
 };
 </script>
