@@ -3,7 +3,7 @@
     <v-container class="secondary">
       <v-row>
         <v-col>
-          <StatusBar />
+          <StatusBar :system="system" />
         </v-col>
       </v-row>
       <v-row>
@@ -29,13 +29,23 @@
 </template>
 
 <script>
-import StatusBar from '@/components/StatusBar';
+import StatusBar from "@/components/StatusBar";
 // @ is an alias to /src
 
 export default {
   name: "home",
   components: {
     StatusBar
+  },
+  computed: {
+    system() {
+      return this.$store.getters.system;
+    }
+  },
+  data() {
+    return {
+
+    }
   }
 };
 </script>

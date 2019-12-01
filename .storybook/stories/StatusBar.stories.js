@@ -12,11 +12,16 @@ export const asDefault = () =>
       StatusBar
     },
     props: {
-      state: {
-        default: text('applied state', 'error')
+      system: {
+        default: select('apply a state', {
+          success: { status: 'success', message: 'all systems operating normally', icon: 'mdi-check-outline'},
+          info: { status: 'info', message: 'manual override enabled', icon: 'mdi-information-outline' },
+          error: { status: 'error', message: 'fault detected in GPIO', icon: 'mdi-alert-outline' }
+        },
+        { status: 'success', message: 'all systems operating normally', icon: 'mdi-check-outline'})
       }
     },
     template: `
-    <StatusBar :state="state" />
+    <StatusBar :system="system" />
   `
   });

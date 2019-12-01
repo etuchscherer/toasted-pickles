@@ -1,22 +1,42 @@
 <template>
-  <v-card :color="backgroundColor" flat class="pa-4">
-    <v-card-title class="white--text">System Status</v-card-title>
+  <v-card :color="backgroundColor" flat>
+    <v-list :color="backgroundColor">
+      <v-list-item>
+      <v-list-item-avatar>
+        <v-icon>{{icon}}</v-icon>
+      </v-list-item-avatar>
+      <v-list-item-content>
+        {{message}}
+      </v-list-item-content>
+      </v-list-item>
+    </v-list>
   </v-card>
 </template>
 
 <script>
 export default {
   props: {
-    state: {
-      type: String,
+    system: {
+      type: Object,
       required: true
     }
   },
   computed: {
     backgroundColor() {
-      console.log('this state is :: ', this.$props.state);
-      return this.$props.state;
+      return this.$props.system.status;
+    },
+    message() {
+      return this.$props.system.message;
+    },
+    icon() {
+      return this.$props.system.icon;
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  #system-status {
+    max-width: 410px;
+  }
+</style>
