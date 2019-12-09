@@ -16,18 +16,20 @@
       </v-btn>
     </v-app-bar>
 
+    <slideout-panel></slideout-panel>
+
     <router-view />
   </v-app>
 </template>
 
 <script>
+
 export default {
   name: "App",
 
-  components: {},
-
   data: () => ({
     //
-  })
+  }),
+
 };
 </script>

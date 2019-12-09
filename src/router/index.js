@@ -6,6 +6,7 @@ import Dashboard from "@/views/Dashboard.vue";
 import Controls from "@/views/Controls.vue";
 import Login from "@/views/Login.vue";
 import firebase from "firebase";
+import LoginPanel from "@/components/LoginPanel";
 
 Vue.use(VueRouter);
 
@@ -50,14 +51,12 @@ router.beforeEach((to, from, next) => {
   const currentUser = firebase.auth().currentUser;
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
   const shouldRedirectToLogin = requiresAuth && !currentUser;
-  console.log(
-    "should redirect to login :: ",
-    shouldRedirectToLogin,
-    requiresAuth,
-    currentUser
-  );
+
   if (shouldRedirectToLogin) {
-    return next("login");
+    router.app.$showPanel({
+      component: LoginPanel
+    });
+    // return next("login");
   } else {
     return next();
   }
