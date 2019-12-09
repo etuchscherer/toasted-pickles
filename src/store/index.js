@@ -6,9 +6,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     system: {
-      status: 'success',
-      message: 'systems operating normally',
-      icon: 'mdi-check-outline'
+      status: "success",
+      message: "systems operating normally",
+      icon: "mdi-check-outline"
     }
   },
   getters: {

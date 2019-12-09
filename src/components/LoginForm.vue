@@ -36,18 +36,18 @@ export default {
   },
   methods: {
     submit() {
-      console.log('submitting', this.form, this.form.email, this.form.password);
+      // console.log('submitting', this.form, this.form.email, this.form.password);
       firebase
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
-        .then(data => {
+        .then(() => {
           this.$router.replace({ name: "settings" });
         })
         .catch(err => {
-          console.log('error :: ', err);
+          console.log("error :: ", err);
           this.error = err.message;
         });
     }
   }
-}
+};
 </script>
