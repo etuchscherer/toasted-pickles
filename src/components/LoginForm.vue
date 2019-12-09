@@ -1,5 +1,5 @@
 <template>
-  <v-form>
+  <v-form color="red" v-on:submit.prevent="submit">
     <v-text-field
       v-model="form.email"
       label="email"
@@ -17,7 +17,7 @@
       outlined
     ></v-text-field>
 
-    <v-btn class="mr-4" @click="submit">submit</v-btn>
+    <v-btn type="submit" color="primary" raised class="mr-4">submit</v-btn>
   </v-form>
 </template>
 
@@ -25,6 +25,9 @@
 import firebase from "firebase";
 
 export default {
+  props: {
+    target: String
+  },
   data() {
     return {
       form: {
@@ -36,12 +39,13 @@ export default {
   },
   methods: {
     submit() {
-      // console.log('submitting', this.form, this.form.email, this.form.password);
+      this.$emit('shut-door');
       firebase
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(() => {
-          this.$router.replace({ name: "settings" });
+          const target = this.target;
+          this.$router.replace({ name: target });
         })
         .catch(err => {
           console.log("error :: ", err);

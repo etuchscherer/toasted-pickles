@@ -54,9 +54,12 @@ router.beforeEach((to, from, next) => {
 
   if (shouldRedirectToLogin) {
     router.app.$showPanel({
-      component: LoginPanel
+      component: LoginPanel,
+      props: {
+        target: to
+      },
+      keepAlive: true
     });
-    // return next("login");
   } else {
     return next();
   }

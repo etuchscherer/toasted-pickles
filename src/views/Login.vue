@@ -26,19 +26,5 @@ export default {
   data() {
     return {};
   }
-  // methods: {
-  //   submit() {
-  //     firebase
-  //       .auth()
-  //       .signInWithEmailAndPassword(this.form.email, this.form.password)
-  //       .then(data => {
-  //         console.log('data:: ', data);
-  //         this.$router.replace({ name: "Dashboard" });
-  //       })
-  //       .catch(err => {
-  //         this.error = err.message;
-  //       });
-  //   }
-  // }
 };
 </script>
