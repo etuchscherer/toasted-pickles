@@ -4,7 +4,7 @@
       <v-col>
         <v-btn color="primary" raised v-on:click="closePanel">
           <v-icon size="x-large">mdi-arrow-left-circle</v-icon>
-           <span> go back</span>
+          <span> go back</span>
         </v-btn>
       </v-col>
     </v-row>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import LoginForm from '@/components/LoginForm'
+import LoginForm from "@/components/LoginForm";
 export default {
   components: {
     LoginForm
@@ -27,5 +27,5 @@ export default {
       this.$emit("closePanel", {});
     }
   }
-}
+};
 </script>

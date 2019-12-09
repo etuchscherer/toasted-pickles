@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     submit() {
-      this.$emit('shut-door');
+      this.$emit("shut-door");
       firebase
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
