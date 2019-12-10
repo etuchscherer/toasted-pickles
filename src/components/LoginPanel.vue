@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     closePanel() {
-      this.$emit("closePanel", {});
+      this.$store.commit("closeLoginPanel");
     }
   }
 };

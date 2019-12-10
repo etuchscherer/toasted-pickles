@@ -39,13 +39,14 @@ export default {
   },
   methods: {
     submit() {
-      this.$emit("shut-door");
+      const { $store, $router, form } = this;
+
       firebase
         .auth()
-        .signInWithEmailAndPassword(this.form.email, this.form.password)
+        .signInWithEmailAndPassword(form.email, form.password)
         .then(() => {
-          const target = this.target;
-          this.$router.replace({ name: target });
+          $store.commit("closeLoginPanel");
+          $router.replace({ name: $store.getters.loginTarget });
         })
         .catch(err => {
           console.log("error :: ", err);

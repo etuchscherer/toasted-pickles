@@ -16,18 +16,34 @@
       </v-btn>
     </v-app-bar>
 
-    <slideout-panel></slideout-panel>
-
+    <slideout-panel :class="shouldOpenLoginPanel"></slideout-panel>
     <router-view />
   </v-app>
 </template>
 
 <script>
+import LoginPanel from "@/components/LoginPanel";
+
 export default {
   name: "App",
 
   data: () => ({
     //
-  })
+  }),
+  computed: {
+    shouldOpenLoginPanel() {
+      const { shouldOpenLoginPanel } = this.$store.getters;
+
+      if (shouldOpenLoginPanel) {
+        const panel = this.$showPanel({
+          component: LoginPanel
+        });
+
+        this.$store.commit("setPanelInstance", panel);
+      }
+
+      return shouldOpenLoginPanel;
+    }
+  }
 };
 </script>
