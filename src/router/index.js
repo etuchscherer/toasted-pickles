@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
 import Settings from "@/views/Settings.vue";
-import Dashboard from "@/views/Dashboard.vue";
+import Plant from "@/views/Plant.vue";
 import Controls from "@/views/Controls.vue";
 import Login from "@/views/Login.vue";
 import firebase from "firebase";
@@ -24,9 +24,9 @@ const routes = [
     }
   },
   {
-    path: "/dashboard",
-    name: "dashboard",
-    component: Dashboard
+    path: "/plant",
+    name: "plant",
+    component: Plant
   },
   {
     path: "/controls",

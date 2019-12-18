@@ -11,8 +11,11 @@
       <v-spacer></v-spacer>
 
       <v-btn text to="/settings">
-        <span class="mr-2">Settings</span>
-        <v-icon>mdi-settings-outline</v-icon>
+        <span class="mr-2">configure</span>
+      </v-btn>
+
+      <v-btn text to="/settings">
+        <span class="mr-2">log in</span>
       </v-btn>
     </v-app-bar>
 

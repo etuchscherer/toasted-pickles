@@ -1,27 +1,28 @@
 <template>
-  <v-content>
-    <v-container class="secondary">
+  <v-content class="secondary">
+    <v-container>
       <v-row>
-        <v-col>
-          <StatusBar :system="system" />
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <v-card class="pa-4" to="dashboard">
-            <v-card-title>
-              Monitor
-              <v-icon large class="ma-2">mdi-tablet-dashboard</v-icon>
-            </v-card-title>
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card class="pa-4" to="controls">
-            <v-card-title>
-              Controls
-              <v-icon large class="ma-2">mdi-tools</v-icon>
-            </v-card-title>
-          </v-card>
+        <v-col cols="12">
+          <v-row align="center" justify="center">
+            <div>
+              <v-btn to="plant" class="mx-2" fab dark color="indigo">
+                <v-icon dark>mdi-plus</v-icon>
+              </v-btn>
+              <p class="text-center">Plant</p>
+            </div>
+            <div>
+              <v-btn to="grow" class="mx-2" fab dark color="indigo">
+                <v-icon dark>mdi-plus</v-icon>
+              </v-btn>
+              <p class="text-center">Grow</p>
+            </div>
+            <div>
+              <v-btn to="harvest" class="mx-2" fab dark color="indigo">
+                <v-icon dark>mdi-plus</v-icon>
+              </v-btn>
+              <p class="text-center">Harvest</p>
+            </div>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>
@@ -29,13 +30,11 @@
 </template>
 
 <script>
-import StatusBar from "@/components/StatusBar";
 // @ is an alias to /src
 
 export default {
   name: "home",
   components: {
-    StatusBar
   },
   computed: {
     system() {
