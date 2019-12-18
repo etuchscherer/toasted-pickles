@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
 import Settings from "@/views/Settings.vue";
 import Plant from "@/views/Plant.vue";
-import Controls from "@/views/Controls.vue";
+import Grow from "@/views/Grow.vue";
 import Login from "@/views/Login.vue";
 import firebase from "firebase";
 
@@ -29,9 +29,9 @@ const routes = [
     component: Plant
   },
   {
-    path: "/controls",
-    name: "controls",
-    component: Controls
+    path: "/grow",
+    name: "grow",
+    component: Grow
   },
   {
     path: "/login",
