@@ -13,7 +13,8 @@ export default new Vuex.Store({
     system: {
       status: "success",
       message: "systems operating normally",
-      icon: "mdi-check-outline"
+      icon: "mdi-check-outline",
+      time: ""
     }
   },
   getters: {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     },
     system(state) {
       return state.system;
+    },
+    time(state) {
+      return state.system.time;
     }
   },
   mutations: {
@@ -41,8 +45,17 @@ export default new Vuex.Store({
     setPanelInstance(state, payload) {
       state.loginPanel.isOpen = true;
       state.loginPanel.instance = payload;
+    },
+    updateTime(state) {
+      state.system.time = +new Date();
     }
   },
-  actions: {},
+  actions: {
+    startTime({ commit }) {
+      setInterval(() => {
+        commit("updateTime");
+      }, 1000);
+    }
+  },
   modules: {}
 });

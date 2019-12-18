@@ -21,15 +21,21 @@
 
     <slideout-panel :class="shouldOpenLoginPanel"></slideout-panel>
     <router-view />
+    <v-system-bar color="primary">
+      <SystemTime />
+    </v-system-bar>
   </v-app>
 </template>
 
 <script>
 import LoginPanel from "@/components/LoginPanel";
+import SystemTime from "@/components/SystemTime";
 
 export default {
   name: "App",
-
+  components: {
+    SystemTime
+  },
   data: () => ({
     //
   }),

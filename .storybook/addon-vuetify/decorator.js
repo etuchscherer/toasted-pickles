@@ -1,6 +1,8 @@
 // Imports
 import Vue from 'vue'
 import Vuetify from 'vuetify'
+import Vuex from 'vuex'
+import store from "../../src/store"
 import { makeDecorator } from '@storybook/addons'
 
 // Utilities
@@ -11,6 +13,7 @@ import 'vuetify/dist/vuetify.min.css'
 import '@mdi/font/css/materialdesignicons.min.css'
 
 Vue.use(Vuetify);
+Vue.use(Vuex);
 
 export default makeDecorator({
   name: 'withVuetify',
@@ -42,6 +45,7 @@ export default makeDecorator({
     const WrappedComponent = storyFn(context)
 
     return Vue.extend({
+      store,
       vuetify,
       components: { WrappedComponent },
       template: `
