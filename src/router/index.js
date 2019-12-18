@@ -4,6 +4,7 @@ import Home from "@/views/Home.vue";
 import Settings from "@/views/Settings.vue";
 import Plant from "@/views/Plant.vue";
 import Grow from "@/views/Grow.vue";
+import Harvest from "@/views/Harvest.vue";
 import Login from "@/views/Login.vue";
 import firebase from "firebase";
 
@@ -32,6 +33,11 @@ const routes = [
     path: "/grow",
     name: "grow",
     component: Grow
+  },
+  {
+    path: "/harvest",
+    name: "harvest",
+    component: Harvest
   },
   {
     path: "/login",
